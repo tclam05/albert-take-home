@@ -2,13 +2,18 @@ import React from "react";
 import "typeface-roboto";
 import Search from "./components/Search/Search-container";
 import CatalogueList from "./components/Catalogue/CatalogueList/CatalogueList-container";
-import "./App.css";
+import "./App.scss";
 
 function App() {
   return (
-    <div>
-      <Search />
-      <CatalogueList />
+    <div className="App">
+      <div className="header">
+        <div className="title">Search the Catalogue</div>
+        <div className="searchContainer">
+          <Search />
+        </div>
+        <CatalogueList />
+      </div>
     </div>
   );
 }

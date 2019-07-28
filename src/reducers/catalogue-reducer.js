@@ -1,8 +1,14 @@
-import { SET_CATALOGUE_ENTRIES, SET_CATALOGUE_PAGE, SET_CATALOGUE_SEARCH } from "../actions/catalogue-actions";
+import {
+  SET_CATALOGUE_ENTRIES,
+  SET_CATALOGUE_PAGE,
+  SET_CATALOGUE_SEARCH,
+  SET_CATALOGUE_QUERY_PARAM
+} from "../actions/catalogue-actions";
 const initialState = {
   entries: [],
   page: 0,
-  search: ""
+  search: "",
+  queryParam: "keyword"
 };
 
 export default function(state = initialState, action) {
@@ -13,6 +19,8 @@ export default function(state = initialState, action) {
       return Object.assign({}, state, { page: action.page });
     case SET_CATALOGUE_SEARCH:
       return Object.assign({}, state, { search: action.search });
+    case SET_CATALOGUE_QUERY_PARAM:
+      return Object.assign({}, state, { queryParam: action.queryParam });
     default:
       return state;
   }

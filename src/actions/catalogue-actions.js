@@ -15,3 +15,9 @@ export const setCatalogueSearch = search => ({
   type: SET_CATALOGUE_SEARCH,
   search
 });
+
+export const SET_CATALOGUE_QUERY_PARAM = "SET_CATALOGUE_QUERY_PARAM";
+export const setCatalogueQueryParam = queryParam => ({
+  type: SET_CATALOGUE_QUERY_PARAM,
+  queryParam
+});

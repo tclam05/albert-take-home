@@ -1,0 +1,14 @@
+.App {
+  font-family: Roboto;
+  .header {
+    text-align: center;
+    .title {
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+    .searchContainer {
+      background: #eee;
+      padding: 15px 0px;
+    }
+  }
+}

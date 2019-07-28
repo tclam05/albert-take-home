@@ -19,6 +19,7 @@ export default class CatalogueList extends React.Component {
     rowsPerPage: 25
   };
 
+  // logic for slicing data based on selected rows per page
   getCatalogueIndex(pageNum) {
     let catalogueIndexArray = [];
     for (let i = 0; i < Math.ceil(this.props.entries.docs.length / this.state.rowsPerPage) - 1; i++) {
@@ -34,6 +35,7 @@ export default class CatalogueList extends React.Component {
     return index;
   }
 
+  // logic for requesting the right page of data based on selected rows per page
   handleChangePage(event, newPage) {
     this.props.setCataloguePage(newPage);
     let page = Math.floor(newPage / Math.ceil(this.props.entries.docs.length / this.state.rowsPerPage));
@@ -46,6 +48,7 @@ export default class CatalogueList extends React.Component {
     CatalogueService.loadCatalogueData(this.props.search, 0);
   }
 
+  // handles pagination for results
   TablePaginationActions(props) {
     const { count, page, rowsPerPage, onChangePage } = props;
 
