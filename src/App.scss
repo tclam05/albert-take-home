@@ -1,5 +1,6 @@
 .App {
   font-family: Roboto;
+  padding: 4px;
   .header {
     text-align: center;
     .title {
@@ -9,6 +10,7 @@
     .searchContainer {
       background: #eee;
       padding: 15px 0px;
+      margin-bottom: 10px;
     }
   }
 }

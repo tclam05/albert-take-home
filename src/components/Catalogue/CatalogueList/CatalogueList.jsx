@@ -21,10 +21,12 @@ export default class CatalogueList extends React.Component {
 
   // logic for slicing data based on selected rows per page
   getCatalogueIndex(pageNum) {
+    // stores appropriate factors to slice data by in array
     let catalogueIndexArray = [];
     for (let i = 0; i < Math.ceil(this.props.entries.docs.length / this.state.rowsPerPage) - 1; i++) {
       catalogueIndexArray.push(this.state.rowsPerPage * (i + 1));
     }
+    // return the appropriate index for slicing based on the page number and selected rows per page
     let index = 0;
     for (let i = 0; i < pageNum; i++) {
       index = catalogueIndexArray[i % catalogueIndexArray.length];
@@ -89,7 +91,7 @@ export default class CatalogueList extends React.Component {
   render() {
     return (
       <React.Fragment>
-        {this.props.entries.docs && (
+        {this.props.entries && this.props.entries.docs && (
           <Table className="CatalogueList">
             <TableHead>
               <TableRow>
@@ -130,6 +132,7 @@ export default class CatalogueList extends React.Component {
             </TableFooter>
           </Table>
         )}
+        {this.props.entries === null && <div>No Results Found</div>}
       </React.Fragment>
     );
   }
